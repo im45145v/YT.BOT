@@ -52,11 +52,11 @@ def transcribe_audio(URL):
         frame_length=16000,
         hop_length=16000
     )
+    os.makedirs('content', exist_ok=True)
+
     for i, speech in enumerate(stream):
-        with open(f'content/{i}.wav', "w") as i:
-            sf.write(f'content/{i}.wav', speech, 16000)
-        
-        
+        file_path = f'content/{i}.wav'
+        sf.write(file_path, speech, 16000)
     audio_path = []
     for a in range(i + 1):
         audio_path.append(f'content/{a}.wav')
