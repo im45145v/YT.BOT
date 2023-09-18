@@ -9,6 +9,12 @@ import subprocess
 import requests
 API_URL = "https://api-inference.huggingface.co/models/jonatasgrosman/wav2vec2-large-xlsr-53-english"
 headers = {"Authorization": "Bearer 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"}
+st.set_page_config(
+    page_title="YT Video Chatbot",
+    page_icon=":video_camera:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 def query(filename):
     with open(filename, "rb") as f:
         data = f.read()
@@ -55,16 +61,21 @@ def transcribe_audio(URL):
     for a in range(i):
         #full_transcript += query(f'content/{a}.wav')
         full_transcript+=query(f'content/{a}.wav')["text"]
-    return full_transcript
+        return full_transcript
 def main():
-    st.header("Chat with YT video 💬")
+    st.header("📹 Chat with YT video 💬")
     URL = st.text_input('Enter YouTube video URL')
     if URL:
-        text = transcribe_audio(URL)
-        if text !="":st.write(text)
+        with st.spinner('Wait for it...'):
+            text = transcribe_audio(URL)
+            st.balloons()
+
         text2=st.text_input("enter your question")
         if text2 != "":
-            ans=story(text=text,text2=text2,api="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")
-            st.write(ans)
+            with st.spinner('Wait for it...'):
+                ans=story(text=text,text2=text2,api=st.secrets.api)
+                st.write(ans)
+                st.balloons()
+
 if __name__ == '__main__':
     main()
