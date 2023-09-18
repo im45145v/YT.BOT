@@ -8,6 +8,7 @@ import soundfile as sf
 import subprocess
 import os
 import requests
+import openai
 API_URL = "https://api-inference.huggingface.co/models/jonatasgrosman/wav2vec2-large-xlsr-53-english"
 headers = {"Authorization": "Bearer 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"}
 st.set_page_config(
