@@ -1,7 +1,6 @@
 # YT.BOT | Streamlit Hugging Face LLM Application
 
-Imagetory is a Streamlit-based Language Model (LLM) application powered by Hugging Face Transformers that allows users to generate Image and Story. With ReImage, you can easily create images from the text you provide.
-
+YT.BOT is a Streamlit-based Language Model (LLM) application powered by Hugging Face Transformers that allows users to interact with youtube video with questions. With YT.BOT, you can easily analyze youtube video and ask questions about the video and get them answered
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -24,7 +23,7 @@ Before you begin, make sure you have the following dependencies installed:
 
 ### Installation
 
-1. Clone the ReImage repository to your local machine:
+1. Clone the YT.BOT repository to your local machine:
 
    ```bash
    git clone https://github.com/im45145v/YT.BOT.git
