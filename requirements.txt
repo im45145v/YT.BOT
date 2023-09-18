@@ -6,3 +6,4 @@ torch
 librosa
 soundfile
 requests
+ffmpeg-python
